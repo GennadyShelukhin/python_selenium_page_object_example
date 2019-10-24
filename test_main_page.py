@@ -3,6 +3,7 @@ from .pages.login_page import LoginPage
 
 
 def test_guest_can_go_to_login_page(browser):
+    """ Тест: Гость может перейти на страницу логина """
     link = "http://selenium1py.pythonanywhere.com/"
     page = MainPage(browser, link)
     page.open()
@@ -12,6 +13,7 @@ def test_guest_can_go_to_login_page(browser):
 
 
 def test_guest_should_see_login_link(browser):
+    """ Тест: Гость видит ссылку на страницу авторизации """
     link = "http://selenium1py.pythonanywhere.com/"
     page = MainPage(browser, link)
     page.open()
