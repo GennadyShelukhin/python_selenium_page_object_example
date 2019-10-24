@@ -23,3 +23,11 @@ class ProductPage(BasePage):
         price = self.get_product_price()
         info_message = self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text
         assert price in info_message, f"Цены товара {price} нету в информационном сообщении {info_message}"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Сообщение об успешном добавлении товара в корзину присутствует, но его не должно быть на странице"
+
+    def should_disappeared_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Сообщение об успешном добавлении товара в корзину не исчезло, но должно было исчезнуть"
