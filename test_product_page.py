@@ -6,6 +6,7 @@ from .pages.basket_page import BasketPage
 from .pages.base_page import BasePage
 
 
+@pytest.mark.need_review
 @pytest.mark.parametrize('link', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2",
@@ -45,7 +46,6 @@ def test_guest_cant_see_success_message(browser):
 
 
 @pytest.mark.xfail(reason="Известный баг")
-@pytest.mark.need_review
 def test_message_disappeared_after_adding_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0"
     page = ProductPage(browser, link)
