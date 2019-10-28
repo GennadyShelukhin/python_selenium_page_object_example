@@ -10,8 +10,6 @@ class BasePageLocators:
 class LoginPageLocators:
     LOGIN_FORM = (By.ID, "login_form")
     REG_FORM = (By.ID, "register_form")
-    EMAIL_LOGIN_FIELD = (By.ID, "id_login-username")
-    PASSWORD_LOGIN_FIELD = (By.ID, "id_login-password")
     EMAIL_REG_FIELD = (By.ID, "id_registration-email")
     PASSWORD_REG_FIELD = (By.ID, "id_registration-password1")
     PASSWORD_CONFIRM_REG_FIELD = (By.ID, "id_registration-password2")
